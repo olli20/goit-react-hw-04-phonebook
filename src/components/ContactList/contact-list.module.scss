@@ -1,0 +1,29 @@
+.btn {
+    display: inline-flex;
+    padding: 3px;
+    margin-left: 15px;
+    background-color: rgb(206, 206, 206);
+    font-size: 12px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color .2s ease-in-out;
+
+    &:hover,
+    &:focus {
+        color: white;
+        background-color: rgb(253, 81, 109);
+    }
+
+    & > svg {
+        font-size: 14px;
+    }
+}
+
+.listItem {
+    font-size: 18px;
+
+    &:not(:last-child) {
+        margin-bottom: 12px;
+    }
+}
