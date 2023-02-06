@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { nanoid } from "nanoid";
+import {useState} from 'react';
+import {nanoid} from "nanoid";
 import PropTypes from 'prop-types';
 
-import initialState from './initial-state';
+import initialState from './initialState';
 
 import styles from './contact-form.module.scss';
 
@@ -14,9 +14,7 @@ const ContactForm = ({onSubmit, contacts}) => {
 
     const handleChange = ({target}) => {
         const {name, value} = target;
-        setState(prevState => {
-            return{...prevState, [name]: value}
-        })
+        setState(prevState => ({...prevState, [name]: value}));
     }
 
     const handleSubmit = event => {
@@ -76,8 +74,17 @@ const ContactForm = ({onSubmit, contacts}) => {
 
 export default ContactForm;
 
+ContactForm.defaultProps = {
+    contacts: [],
+}
+
 ContactForm.propTypes = {
     onSubmit: PropTypes.func.isRequired,
+    contacts: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        number: PropTypes.string.isRequired,
+    })).isRequired,
 }
 
 

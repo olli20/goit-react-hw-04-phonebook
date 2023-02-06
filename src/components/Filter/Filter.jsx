@@ -6,11 +6,11 @@ const Filter = ({filter, onFilter}) => {
     return (
         <>
             <p className={styles.message}>Find contacts by name</p>
-                <input 
+            <input 
                 type="text"
                 value={filter} 
                 onChange={onFilter} 
-                className={styles.input}  
+                className={styles.input}
             />
         </>
     )

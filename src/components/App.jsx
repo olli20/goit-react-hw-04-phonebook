@@ -18,9 +18,7 @@ const App = () => {
 
   const submitHandler = data => setContacts(prevContacts => [...prevContacts, data]);
 
-  const deleteContact = contactId => {
-    return setContacts(prevContacts => prevContacts.filter(contact => contact.id !== contactId))
-  };
+  const deleteContact = contactId => setContacts(prevContacts => prevContacts.filter(contact => contact.id !== contactId));
 
   const changeFilter = event => setFilter(event.currentTarget.value);
 
@@ -53,13 +51,7 @@ export default App;
 
 // class App extends Component {
 //   state = {
-//     contacts: [
-//       // {id: 'id-1', name: 'General emergencies', number: '112'},
-//       // {id: 'id-2', name: 'Police', number: '102'},
-//       // {id: 'id-3', name: 'Ambulance', number: '103'},
-//       // {id: 'id-4', name: 'Fire', number: '101'},
-//       // {id: 'id-5', name: 'Gas emergency', number: '104'},
-//     ],
+//     contacts: [],
 //     filter: "",
 //   }
 
